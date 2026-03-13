@@ -407,15 +407,14 @@
     }
 
     .gallery-thumbs {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
       gap: 8px;
       margin-top: 12px;
-      flex-wrap: wrap;
     }
 
     .thumb {
-      width: 64px;
-      height: 64px;
+      aspect-ratio: 1;
       border-radius: var(--radius-sm);
       border: 2px solid transparent;
       overflow: hidden;
