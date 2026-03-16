@@ -369,6 +369,8 @@
       .summary-col { position: static; order: -1; }
       .mobile-summary { display: block; }
       .order-summary-card { display: none; }
+      #bump-box-desktop { display: none; }
+      .delivery-option-price { display: none; }
     }
 
     @media (max-width: 600px) {
@@ -414,12 +416,14 @@
         Назад към продукта
       </a>
 
-      <div id="form-error">Моля, попълни всички задължителни полета.</div>
-
       <!-- Mobile summary -->
       <div class="mobile-summary">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid var(--color-border);">
+          <img src="images/hero_product.jpg" style="width:52px; height:52px; border-radius:8px; object-fit:cover; flex-shrink:0;">
+          <div style="font-size:14px; font-weight:700; line-height:1.4;">GDLite GD-8017 Music</div>
+        </div>
         <div class="mobile-summary-row">
-          <span class="mobile-summary-product">GDLite GD-8017 Music</span>
+          <span class="mobile-summary-product">Продукт</span>
           <span>59.00лв. <small style="display:inline;font-size:11px;color:var(--color-text-faint)">(30.17€)</small></span>
         </div>
         <div class="mobile-summary-row" style="margin-top:6px; color: var(--color-text-muted); font-size:13px;">
@@ -537,6 +541,7 @@
 
       <!-- Submit -->
       <div class="form-card" style="padding-bottom: 28px;">
+        <div id="form-error">Моля, попълни всички задължителни полета.</div>
         <button type="button" class="btn-submit" id="submit-btn" onclick="submitOrder()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
