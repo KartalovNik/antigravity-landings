@@ -65,63 +65,24 @@
       top: 0;
       z-index: 100;
     }
-    .checkout-logo {
-      font-size: 15px;
-      font-weight: 900;
-      letter-spacing: .06em;
-      color: #fff;
-      text-transform: uppercase;
-    }
+    .checkout-logo { font-size: 15px; font-weight: 900; letter-spacing: .06em; color: #fff; text-transform: uppercase; }
     .checkout-logo span { color: var(--color-primary); }
-    .checkout-secure {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      color: rgba(255,255,255,.7);
-      font-weight: 600;
-    }
+    .checkout-secure { display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,.7); font-weight: 600; }
 
-    /* ---- Announcement bar ---- */
-    .ann-bar {
-      background: var(--color-primary);
-      color: #fff;
-      text-align: center;
-      padding: 9px 16px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: .01em;
-    }
+    .ann-bar { background: var(--color-primary); color: #fff; text-align: center; padding: 9px 16px; font-size: 13px; font-weight: 600; }
 
     /* ---- Layout ---- */
-    .checkout-wrap {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 32px 20px 60px;
-    }
+    .checkout-wrap { max-width: 1080px; margin: 0 auto; padding: 32px 20px 60px; }
+    .checkout-grid { display: grid; grid-template-columns: 1fr 420px; gap: 32px; align-items: start; }
 
-    .checkout-grid {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 32px;
-      align-items: start;
-    }
-
-    /* ---- Back link ---- */
     .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--color-text-muted);
-      text-decoration: none;
-      margin-bottom: 20px;
-      transition: color 150ms;
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; color: var(--color-text-muted);
+      text-decoration: none; margin-bottom: 20px; transition: color 150ms;
     }
     .back-link:hover { color: var(--color-primary); }
 
-    /* ---- Form sections ---- */
+    /* ---- Form cards ---- */
     .form-card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
@@ -130,35 +91,22 @@
       margin-bottom: 16px;
       box-shadow: var(--shadow-sm);
     }
-    .form-card h2 {
-      font-size: 17px;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: var(--color-black);
+    .form-card h2 { font-size: 17px; font-weight: 800; margin-bottom: 20px; color: var(--color-black); }
+
+    .form-section-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      margin-bottom: 14px;
+      margin-top: 4px;
     }
 
-    .field-group {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
+    .field-group { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .field-group.full { grid-template-columns: 1fr; }
 
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .field label {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--color-text);
-    }
-    .field label .opt {
-      font-weight: 400;
-      color: var(--color-text-faint);
-      font-size: 12px;
-    }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field label { font-size: 13px; font-weight: 700; color: var(--color-text); }
+    .field label .opt { font-weight: 400; color: var(--color-text-faint); font-size: 12px; }
     .field input {
       border: 1.5px solid var(--color-border);
       border-radius: var(--radius-md);
@@ -172,50 +120,71 @@
       font-family: inherit;
     }
     .field input:focus { border-color: var(--color-primary); }
-    .field input.error { border-color: var(--color-primary); }
-    .field-error {
-      font-size: 12px;
-      color: var(--color-primary);
-      display: none;
-      margin-top: -2px;
-    }
+    .field-error { font-size: 12px; color: var(--color-primary); display: none; margin-top: -2px; }
     .field.has-error .field-error { display: block; }
     .field.has-error input { border-color: var(--color-primary); }
 
-    /* ---- Delivery box ---- */
-    .delivery-box {
-      border: 2px solid var(--color-success);
+    /* ---- Phone with flag ---- */
+    .phone-input-wrap {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 150ms;
+    }
+    .phone-input-wrap:focus-within { border-color: var(--color-primary); }
+    .field.has-error .phone-input-wrap { border-color: var(--color-primary); }
+    .phone-prefix {
+      padding: 12px 10px 12px 14px;
+      font-size: 14px;
+      background: var(--color-surface-alt);
+      border-right: 1.5px solid var(--color-border);
+      white-space: nowrap;
+      flex-shrink: 0;
+      color: var(--color-text-muted);
+      font-weight: 600;
+    }
+    .phone-input-wrap input {
+      border: none;
+      border-radius: 0;
+      flex: 1;
+    }
+    .phone-input-wrap input:focus { border-color: transparent; }
+
+    /* ---- Delivery options ---- */
+    .delivery-options { display: flex; flex-direction: column; gap: 10px; }
+    .delivery-option {
+      border: 2px solid var(--color-border);
       border-radius: var(--radius-md);
       padding: 14px 16px;
+      cursor: pointer;
+      transition: border-color 150ms, background 150ms;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .delivery-option.selected {
+      border-color: var(--color-success);
       background: #F0FFF4;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
     }
-    .delivery-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .delivery-check {
-      width: 22px;
-      height: 22px;
-      background: var(--color-success);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .delivery-option input[type="radio"] {
+      width: 18px; height: 18px;
+      accent-color: var(--color-success);
       flex-shrink: 0;
+      margin-top: 2px;
+      cursor: pointer;
     }
-    .delivery-check svg { color: #fff; }
-    .delivery-name { font-size: 15px; font-weight: 800; }
-    .delivery-note { font-size: 12px; color: var(--color-text-muted); margin-top: 2px; }
-    .delivery-price-tag {
-      font-size: 15px;
+    .delivery-option-body { flex: 1; }
+    .delivery-option-name { font-size: 15px; font-weight: 800; }
+    .delivery-option-note { font-size: 12px; color: var(--color-text-muted); margin-top: 2px; line-height: 1.5; }
+    .delivery-option-price {
+      font-size: 14px;
       font-weight: 800;
       color: var(--color-black);
       white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
     /* ---- Payment box ---- */
@@ -228,282 +197,175 @@
       align-items: center;
       gap: 12px;
     }
+    .delivery-check {
+      width: 22px; height: 22px;
+      background: var(--color-success);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .delivery-check svg { color: #fff; }
     .payment-name { font-size: 15px; font-weight: 800; }
     .payment-note { font-size: 12px; color: var(--color-text-muted); margin-top: 2px; }
 
-    /* ---- Submit button ---- */
+    /* ---- Submit ---- */
     .btn-submit {
-      width: 100%;
-      background: var(--color-primary);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius-pill);
-      padding: 18px 32px;
-      font-size: 17px;
-      font-weight: 800;
-      letter-spacing: .02em;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
+      width: 100%; background: var(--color-primary); color: #fff;
+      border: none; border-radius: var(--radius-pill);
+      padding: 18px 32px; font-size: 17px; font-weight: 800;
+      letter-spacing: .02em; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
       box-shadow: 0 8px 32px rgba(229,62,62,.3);
-      transition: background 150ms, transform 120ms;
-      margin-top: 8px;
+      transition: background 150ms, transform 120ms; margin-top: 8px;
     }
     .btn-submit:hover { background: var(--color-primary-dark); transform: translateY(-1px); }
     .btn-submit:active { transform: translateY(0); }
     .btn-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
 
-    .trust-microcopy {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 14px;
-      justify-content: center;
-    }
-    .trust-microcopy span {
-      font-size: 12px;
-      color: var(--color-text-muted);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
+    .trust-microcopy { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 14px; justify-content: center; }
+    .trust-microcopy span { font-size: 12px; color: var(--color-text-muted); display: flex; align-items: center; gap: 5px; }
     .trust-microcopy span::before {
-      content: '';
-      display: inline-block;
-      width: 14px;
-      height: 14px;
-      background: var(--color-success);
-      border-radius: 50%;
+      content: ''; display: inline-block; width: 14px; height: 14px;
+      background: var(--color-success); border-radius: 50%;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
-      background-size: 10px;
-      background-position: center;
-      background-repeat: no-repeat;
-      flex-shrink: 0;
+      background-size: 10px; background-position: center; background-repeat: no-repeat; flex-shrink: 0;
     }
 
-    /* ---- Error banner ---- */
     #form-error {
-      display: none;
-      background: #FFF5F5;
+      display: none; background: #FFF5F5;
       border: 1.5px solid var(--color-primary);
-      border-radius: var(--radius-md);
-      padding: 14px 16px;
-      font-size: 14px;
-      color: #C53030;
-      font-weight: 600;
-      margin-bottom: 12px;
+      border-radius: var(--radius-md); padding: 14px 16px;
+      font-size: 14px; color: #C53030; font-weight: 600; margin-bottom: 12px;
     }
 
     /* ============================================================
-       RIGHT COLUMN: Order summary + bump
+       RIGHT COLUMN
     ============================================================ */
-    .summary-col {
-      position: sticky;
-      top: 72px;
-    }
+    .summary-col { position: sticky; top: 72px; }
 
     .order-summary-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 16px;
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg); padding: 24px;
+      box-shadow: var(--shadow-sm); margin-bottom: 16px;
     }
     .order-summary-card h2 {
-      font-size: 15px;
-      font-weight: 800;
-      margin-bottom: 18px;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      color: var(--color-text-muted);
+      font-size: 15px; font-weight: 800; margin-bottom: 18px;
+      text-transform: uppercase; letter-spacing: .04em; color: var(--color-text-muted);
     }
 
     .order-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--color-border);
-      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 14px;
+      padding-bottom: 16px; border-bottom: 1px solid var(--color-border); margin-bottom: 16px;
     }
-    .order-item-img {
-      width: 72px;
-      height: 72px;
-      border-radius: var(--radius-md);
-      object-fit: cover;
-      border: 1px solid var(--color-border);
-      flex-shrink: 0;
-    }
+    .order-item-img { width: 72px; height: 72px; border-radius: var(--radius-md); object-fit: cover; border: 1px solid var(--color-border); flex-shrink: 0; }
     .order-item-info { flex: 1; min-width: 0; }
     .order-item-name { font-size: 14px; font-weight: 700; line-height: 1.4; }
     .order-item-qty { font-size: 13px; color: var(--color-text-faint); margin-top: 3px; }
-    .order-item-price { font-size: 15px; font-weight: 800; white-space: nowrap; }
+    .order-item-price { font-size: 14px; font-weight: 800; white-space: nowrap; text-align: right; }
+    .order-item-price small { display: block; font-size: 11px; font-weight: 600; color: var(--color-text-faint); }
 
     .total-rows { display: flex; flex-direction: column; gap: 10px; }
-    .total-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      color: var(--color-text-muted);
-    }
+    .total-row { display: flex; justify-content: space-between; font-size: 14px; color: var(--color-text-muted); }
     .total-row.grand {
-      font-size: 18px;
-      font-weight: 900;
-      color: var(--color-black);
-      padding-top: 12px;
-      margin-top: 4px;
-      border-top: 2px solid var(--color-border);
+      font-size: 18px; font-weight: 900; color: var(--color-black);
+      padding-top: 12px; margin-top: 4px; border-top: 2px solid var(--color-border);
     }
-    .total-row.grand .grand-eur {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--color-text-faint);
-      margin-left: 6px;
-    }
+    .total-row.grand .grand-eur { font-size: 13px; font-weight: 600; color: var(--color-text-faint); margin-left: 6px; }
 
-    /* ---- Bump offer ---- */
+    /* ---- Bump box ---- */
     .bump-box {
-      background: var(--color-surface);
-      border: 2.5px solid var(--color-primary);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 16px;
+      background: var(--color-surface); border: 2.5px solid var(--color-primary);
+      border-radius: var(--radius-lg); overflow: hidden;
+      box-shadow: var(--shadow-sm); margin-bottom: 16px;
     }
     .bump-header {
-      background: var(--color-primary);
-      padding: 8px 18px;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: #fff;
+      background: var(--color-primary); padding: 8px 18px;
+      font-size: 12px; font-weight: 900; letter-spacing: .08em;
+      text-transform: uppercase; color: #fff;
     }
     .bump-label {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 18px;
-      cursor: pointer;
-      user-select: none;
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 18px; cursor: pointer; user-select: none;
     }
-    .bump-checkbox-wrap {
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .bump-checkbox-wrap input[type="checkbox"] {
-      width: 20px;
-      height: 20px;
-      accent-color: var(--color-primary);
-      cursor: pointer;
-    }
-    .bump-img {
-      width: 80px;
-      height: 80px;
-      border-radius: var(--radius-md);
-      object-fit: cover;
-      flex-shrink: 0;
-    }
+    .bump-checkbox-wrap { flex-shrink: 0; margin-top: 2px; }
+    .bump-checkbox-wrap input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--color-primary); cursor: pointer; }
+    .bump-img { width: 80px; height: 80px; border-radius: var(--radius-md); object-fit: cover; flex-shrink: 0; }
     .bump-info { flex: 1; min-width: 0; }
     .bump-title { font-size: 14px; font-weight: 800; line-height: 1.4; margin-bottom: 8px; }
     .bump-price-now { font-size: 20px; font-weight: 900; color: var(--color-primary); }
-    .bump-price-was {
-      font-size: 13px;
-      color: var(--color-text-faint);
-      text-decoration: line-through;
-      margin-left: 6px;
-    }
+    .bump-price-was { font-size: 13px; color: var(--color-text-faint); text-decoration: line-through; margin-left: 6px; }
     .bump-saving {
       display: inline-block;
-      background: #FFF5F5;
-      color: var(--color-primary);
-      font-size: 11px;
-      font-weight: 800;
-      padding: 3px 10px;
-      border-radius: var(--radius-pill);
-      margin-top: 6px;
+      background: #F0FFF4;
+      color: var(--color-success);
+      font-size: 11px; font-weight: 800;
+      padding: 3px 10px; border-radius: var(--radius-pill); margin-top: 6px;
+    }
+
+    /* ---- Bump quantity ---- */
+    .bump-qty-wrap {
+      display: none;
+      align-items: center;
+      gap: 0;
+      margin-top: 12px;
+    }
+    .bump-qty-wrap.visible { display: flex; }
+    .qty-btn {
+      width: 32px; height: 32px;
+      border: 1.5px solid var(--color-border);
+      background: var(--color-surface-alt);
+      border-radius: var(--radius-sm);
+      font-size: 18px; font-weight: 700;
+      cursor: pointer; color: var(--color-text);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 120ms;
+      flex-shrink: 0;
+    }
+    .qty-btn:hover { background: var(--color-border); }
+    .qty-display {
+      width: 40px; text-align: center;
+      font-size: 15px; font-weight: 800;
+      border-top: 1.5px solid var(--color-border);
+      border-bottom: 1.5px solid var(--color-border);
+      padding: 6px 0;
+      line-height: 1;
     }
 
     /* ---- Security badges ---- */
-    .security-badges {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-    }
-    .security-badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--color-text-faint);
-      font-weight: 600;
-    }
+    .security-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .security-badge { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--color-text-faint); font-weight: 600; }
 
-    /* ---- Spinner overlay ---- */
+    /* ---- Spinner ---- */
     #spinner-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(255,255,255,.85);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 16px;
+      display: none; position: fixed; inset: 0;
+      background: rgba(255,255,255,.85); z-index: 9999;
+      align-items: center; justify-content: center; flex-direction: column; gap: 16px;
     }
     #spinner-overlay.active { display: flex; }
-    .spinner {
-      width: 48px;
-      height: 48px;
-      border: 4px solid var(--color-border);
-      border-top-color: var(--color-primary);
-      border-radius: 50%;
-      animation: spin .8s linear infinite;
-    }
+    .spinner { width: 48px; height: 48px; border: 4px solid var(--color-border); border-top-color: var(--color-primary); border-radius: 50%; animation: spin .8s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
     .spinner-text { font-size: 15px; font-weight: 700; color: var(--color-text-muted); }
 
-    /* ---- Mobile summary (hidden on desktop) ---- */
+    /* ---- Mobile summary ---- */
     .mobile-summary {
-      display: none;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: 18px;
-      margin-bottom: 20px;
-      box-shadow: var(--shadow-sm);
+      display: none; background: var(--color-surface);
+      border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+      padding: 18px; margin-bottom: 20px; box-shadow: var(--shadow-sm);
     }
-    .mobile-summary-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 14px;
-    }
+    .mobile-summary-row { display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
     .mobile-summary-product { font-weight: 700; }
     .mobile-total-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 17px;
-      font-weight: 900;
-      margin-top: 10px;
-      padding-top: 10px;
+      display: flex; justify-content: space-between;
+      font-size: 17px; font-weight: 900;
+      margin-top: 10px; padding-top: 10px;
       border-top: 1px solid var(--color-border);
     }
+    .mobile-total-eur { font-size: 12px; font-weight: 600; color: var(--color-text-faint); margin-left: 4px; }
 
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
+    /* ---- Responsive ---- */
     @media (max-width: 900px) {
-      .checkout-grid {
-        grid-template-columns: 1fr;
-      }
-      .summary-col {
-        position: static;
-        order: -1;
-      }
+      .checkout-grid { grid-template-columns: 1fr; }
+      .summary-col { position: static; order: -1; }
       .mobile-summary { display: block; }
       .order-summary-card { display: none; }
     }
@@ -529,14 +391,12 @@
   <div class="checkout-logo">GDLITE <span>GD-8017</span> MUSIC</div>
   <div class="checkout-secure">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
     </svg>
     Сигурна поръчка
   </div>
 </header>
 
-<!-- Announcement bar -->
 <div class="ann-bar">
   Намаление <strong>41%</strong> само сега. Поръчай и плати при доставка.
 </div>
@@ -555,23 +415,23 @@
 
       <div id="form-error">Моля, попълни всички задължителни полета.</div>
 
-      <!-- Mobile summary (shown only on mobile) -->
+      <!-- Mobile summary -->
       <div class="mobile-summary">
         <div class="mobile-summary-row">
           <span class="mobile-summary-product">GDLite GD-8017 Music</span>
-          <span>59.00лв.</span>
+          <span>59.00лв. <small style="display:inline;font-size:11px;color:var(--color-text-faint)">(30.17€)</small></span>
         </div>
         <div class="mobile-summary-row" style="margin-top:6px; color: var(--color-text-muted); font-size:13px;">
-          <span>Доставка (ЕКОНТ)</span>
-          <span>6.00лв.</span>
+          <span id="mobile-delivery-label">Доставка (ЕКОНТ до офис)</span>
+          <span id="mobile-delivery-price">6.00лв. (3.07€)</span>
         </div>
         <div class="mobile-total-row">
           <span>ОБЩО</span>
-          <span id="mobile-grand-total">65.00лв.</span>
+          <span><span id="mobile-grand-total">65.00лв.</span><span class="mobile-total-eur" id="mobile-grand-eur">(33.24€)</span></span>
         </div>
       </div>
 
-      <!-- Bump offer (mobile only, shown before form) -->
+      <!-- Bump offer (mobile only - shown before form) -->
       <div class="bump-box" id="bump-box-mobile" style="display:none; margin-bottom:20px;">
         <div class="bump-header">Специална оферта само при тази поръчка</div>
         <label class="bump-label" for="bump-checkbox-mobile">
@@ -580,47 +440,54 @@
           </div>
           <img src="images/hero_product.jpg" class="bump-img" alt="GDLite GD-8017 Music">
           <div class="bump-info">
-            <div class="bump-title">Добави втора бройка GDLite GD-8017 Music</div>
+            <div class="bump-title">Добави втора бройка GDLite GD-8017 Music с още по-голямо намаление</div>
             <div>
-              <span class="bump-price-now">47.00лв.</span>
+              <span class="bump-price-now">47.00лв. (24.03€)</span>
               <span class="bump-price-was">59.00лв.</span>
             </div>
-            <div class="bump-saving">Спестяваш 12лв. (20% OFF)</div>
+            <div class="bump-saving">Спестяваш 12лв./6.14€ (20% OFF)</div>
+            <div class="bump-qty-wrap" id="bump-qty-wrap-mobile">
+              <button type="button" class="qty-btn" onclick="changeBumpQty(-1)">&#8722;</button>
+              <div class="qty-display" id="bump-qty-display-mobile">1</div>
+              <button type="button" class="qty-btn" onclick="changeBumpQty(1)">&#43;</button>
+            </div>
           </div>
         </label>
       </div>
 
       <!-- Contact info -->
       <div class="form-card">
-        <h2>Твоите данни</h2>
+        <h2>Данни за поръчката</h2>
+
+        <p class="form-section-label">Моля, напишете Вашето Ime и Имейл отгоре:</p>
         <div class="field-group" style="margin-bottom:14px;">
           <div class="field" id="field-name">
-            <label for="inp-name">Ime и Фамилия *</label>
-            <input type="text" id="inp-name" name="name" placeholder="Иван Иванов" autocomplete="name">
+            <input type="text" id="inp-name" name="name" placeholder="Ime и Фамилия" autocomplete="name">
             <span class="field-error">Задължително поле</span>
           </div>
+          <div class="field">
+            <input type="email" id="inp-email" name="email" placeholder="Email Адрес" autocomplete="email">
+          </div>
+        </div>
+
+        <p class="form-section-label">Моля, напишете Телефон, Адрес и Град за Доставка:</p>
+        <div class="field-group full" style="margin-bottom:14px;">
           <div class="field" id="field-phone">
-            <label for="inp-phone">Телефон *</label>
-            <input type="tel" id="inp-phone" name="phone" placeholder="08XX XXX XXX" autocomplete="tel">
+            <div class="phone-input-wrap">
+              <span class="phone-prefix">&#127463;&#127468; +359</span>
+              <input type="tel" id="inp-phone" name="phone" placeholder="Телефонен номер" autocomplete="tel">
+            </div>
             <span class="field-error">Задължително поле</span>
           </div>
         </div>
         <div class="field-group" style="margin-bottom:14px;">
           <div class="field" id="field-address">
-            <label for="inp-address">Адрес *</label>
-            <input type="text" id="inp-address" name="address" placeholder="ул. Примерна 1" autocomplete="street-address">
+            <input type="text" id="inp-address" name="address" placeholder="Адрес или Офис на ЕКОНТ" autocomplete="street-address">
             <span class="field-error">Задължително поле</span>
           </div>
           <div class="field" id="field-city">
-            <label for="inp-city">Град *</label>
-            <input type="text" id="inp-city" name="city" placeholder="София" autocomplete="address-level2">
+            <input type="text" id="inp-city" name="city" placeholder="Град" autocomplete="address-level2">
             <span class="field-error">Задължително поле</span>
-          </div>
-        </div>
-        <div class="field-group full">
-          <div class="field">
-            <label for="inp-email">Имейл <span class="opt">(незадължително)</span></label>
-            <input type="email" id="inp-email" name="email" placeholder="email@example.com" autocomplete="email">
           </div>
         </div>
       </div>
@@ -628,19 +495,26 @@
       <!-- Delivery -->
       <div class="form-card">
         <h2>Доставка</h2>
-        <div class="delivery-box">
-          <div class="delivery-left">
-            <div class="delivery-check">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
+        <div class="delivery-options">
+
+          <label class="delivery-option selected" for="delivery-office">
+            <input type="radio" id="delivery-office" name="delivery" value="office" checked>
+            <div class="delivery-option-body">
+              <div class="delivery-option-name">До офис на ЕКОНТ</div>
+              <div class="delivery-option-note">Моля напишете адреса или името на офиса в полето за адрес</div>
             </div>
-            <div>
-              <div class="delivery-name">ЕКОНТ</div>
-              <div class="delivery-note">Цена на Доставка (ориентировъчна) &middot; Тегло: 1.00kg</div>
+            <div class="delivery-option-price">ЕКОНТ цена (ориентировъчна)<br>(Тегло: 1.00кг) - 3.07€ (6.00лв.)</div>
+          </label>
+
+          <label class="delivery-option" for="delivery-address">
+            <input type="radio" id="delivery-address" name="delivery" value="address">
+            <div class="delivery-option-body">
+              <div class="delivery-option-name">До адрес</div>
+              <div class="delivery-option-note">Доставка до посочен адрес</div>
             </div>
-          </div>
-          <div class="delivery-price-tag">3.07€ (6.00лв.)</div>
+            <div class="delivery-option-price">ЕКОНТ цена (ориентировъчна)<br>(Тегло: 1.00кг) - 4.10€ (8.00лв.)</div>
+          </label>
+
         </div>
       </div>
 
@@ -689,16 +563,19 @@
             <div class="order-item-name">GDLite GD-8017 Music</div>
             <div class="order-item-qty" id="product-qty-label">x1 бройка</div>
           </div>
-          <div class="order-item-price" id="product-line-price">59.00лв.</div>
+          <div class="order-item-price" id="product-line-price">
+            59.00лв.
+            <small>(30.17€)</small>
+          </div>
         </div>
         <div class="total-rows">
           <div class="total-row">
             <span>Продукт</span>
-            <span id="product-subtotal">59.00лв.</span>
+            <span id="product-subtotal">59.00лв. <span style="font-size:12px;color:var(--color-text-faint)">(30.17€)</span></span>
           </div>
           <div class="total-row">
-            <span>Доставка (ЕКОНТ)</span>
-            <span>6.00лв.</span>
+            <span id="delivery-label-summary">Доставка (ЕКОНТ до офис)</span>
+            <span id="delivery-price-summary">6.00лв. <span style="font-size:12px;color:var(--color-text-faint)">(3.07€)</span></span>
           </div>
           <div class="total-row grand">
             <span>ОБЩО</span>
@@ -719,12 +596,17 @@
           </div>
           <img src="images/hero_product.jpg" class="bump-img" alt="GDLite GD-8017 Music">
           <div class="bump-info">
-            <div class="bump-title">Добави втора бройка GDLite GD-8017 Music</div>
+            <div class="bump-title">Добави втора бройка GDLite GD-8017 Music с още по-голямо намаление</div>
             <div>
-              <span class="bump-price-now">47.00лв.</span>
+              <span class="bump-price-now">47.00лв. (24.03€)</span>
               <span class="bump-price-was">59.00лв.</span>
             </div>
-            <div class="bump-saving">Спестяваш 12лв. (20% OFF)</div>
+            <div class="bump-saving">Спестяваш 12лв./6.14€ (20% OFF)</div>
+            <div class="bump-qty-wrap" id="bump-qty-wrap-desktop">
+              <button type="button" class="qty-btn" onclick="changeBumpQty(-1)">&#8722;</button>
+              <div class="qty-display" id="bump-qty-display-desktop">1</div>
+              <button type="button" class="qty-btn" onclick="changeBumpQty(1)">&#43;</button>
+            </div>
           </div>
         </label>
       </div>
@@ -741,7 +623,7 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
           </svg>
-          Доставка 1-3 работни дни
+          БЪРЗА ДОСТАВКА - изпращаме всеки работен ден
         </div>
       </div>
     </div>
@@ -753,32 +635,94 @@
   // ============================================================
   // CONFIG
   // ============================================================
-  const APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL';
-  const THANK_YOU_PAGE  = 'gdlite-thankyou-BG.html';
-  const LANG            = 'BG';
+  const APPS_SCRIPT_URL        = 'YOUR_APPS_SCRIPT_URL';
+  const THANK_YOU_PAGE         = 'gdlite-thankyou-BG.html';
+  const LANG                   = 'BG';
+  const BGN_TO_EUR             = 1.956;
 
-  // Prices (лв.)
-  const PRICE_PRODUCT  = 59.00;
-  const PRICE_DELIVERY = 6.00;
-  const PRICE_BUMP     = 47.00;
+  const PRICE_PRODUCT          = 59.00;  // лв.
+  const PRICE_DELIVERY_OFFICE  = 6.00;   // лв. - до офис
+  const PRICE_DELIVERY_ADDRESS = 8.00;   // лв. - до адрес
+  const PRICE_BUMP             = 47.00;  // лв. за 1 бройка
 
   // ============================================================
-  // BUMP SYNC (desktop <-> mobile)
+  // DELIVERY
+  // ============================================================
+  const deliveryOfficeEl  = document.getElementById('delivery-office');
+  const deliveryAddressEl = document.getElementById('delivery-address');
+  const addressInput      = document.getElementById('inp-address');
+
+  function getDeliveryPrice() {
+    return deliveryAddressEl.checked ? PRICE_DELIVERY_ADDRESS : PRICE_DELIVERY_OFFICE;
+  }
+  function getDeliveryLabel() {
+    return deliveryAddressEl.checked ? 'Доставка (ЕКОНТ до адрес)' : 'Доставка (ЕКОНТ до офис)';
+  }
+
+  function onDeliveryChange() {
+    // Update selected style
+    document.querySelectorAll('.delivery-option').forEach(el => el.classList.remove('selected'));
+    const selected = deliveryAddressEl.checked
+      ? document.querySelector('label[for="delivery-address"]')
+      : document.querySelector('label[for="delivery-office"]');
+    if (selected) selected.classList.add('selected');
+
+    // Update address placeholder
+    addressInput.placeholder = deliveryAddressEl.checked
+      ? 'Улица \u2116'
+      : 'Адрес или Офис на ЕКОНТ';
+
+    updateTotals();
+  }
+
+  deliveryOfficeEl.addEventListener('change', onDeliveryChange);
+  deliveryAddressEl.addEventListener('change', onDeliveryChange);
+
+  // ============================================================
+  // BUMP CHECKBOX SYNC (fix toggle bug)
   // ============================================================
   const bumpDesktop = document.getElementById('bump-checkbox');
   const bumpMobile  = document.getElementById('bump-checkbox-mobile');
 
-  function onBumpChange() {
-    const checked = bumpDesktop.checked || bumpMobile.checked;
-    bumpDesktop.checked = checked;
-    bumpMobile.checked  = checked;
+  bumpDesktop.addEventListener('change', () => {
+    bumpMobile.checked = bumpDesktop.checked;
+    onBumpToggle();
+  });
+  bumpMobile.addEventListener('change', () => {
+    bumpDesktop.checked = bumpMobile.checked;
+    onBumpToggle();
+  });
+
+  function onBumpToggle() {
+    const isChecked = bumpDesktop.checked;
+    document.getElementById('bump-qty-wrap-desktop').classList.toggle('visible', isChecked);
+    document.getElementById('bump-qty-wrap-mobile').classList.toggle('visible', isChecked);
+    if (!isChecked) bumpQty = 1; // reset qty when unchecked
+    syncQtyDisplays();
     updateTotals();
   }
 
-  bumpDesktop.addEventListener('change', onBumpChange);
-  bumpMobile.addEventListener('change', onBumpChange);
+  // ============================================================
+  // BUMP QUANTITY
+  // ============================================================
+  let bumpQty = 1;
 
-  // Show mobile bump box on mobile
+  function changeBumpQty(delta) {
+    const next = bumpQty + delta;
+    if (next < 1 || next > 5) return;
+    bumpQty = next;
+    syncQtyDisplays();
+    updateTotals();
+  }
+
+  function syncQtyDisplays() {
+    document.getElementById('bump-qty-display-desktop').textContent = bumpQty;
+    document.getElementById('bump-qty-display-mobile').textContent  = bumpQty;
+  }
+
+  // ============================================================
+  // MOBILE BUMP VISIBILITY
+  // ============================================================
   function checkMobileLayout() {
     const isMobile = window.innerWidth <= 900;
     document.getElementById('bump-box-mobile').style.display = isMobile ? 'block' : 'none';
@@ -787,46 +731,66 @@
   window.addEventListener('resize', checkMobileLayout);
 
   // ============================================================
-  // TOTAL CALCULATION
+  // TOTALS
   // ============================================================
-  function updateTotals() {
-    const hasBump = bumpDesktop.checked;
-    const qty     = hasBump ? 2 : 1;
-    const product = hasBump ? (PRICE_PRODUCT + PRICE_BUMP) : PRICE_PRODUCT;
-    const total   = product + PRICE_DELIVERY;
-    const totalEur = (total / 1.956).toFixed(2);
+  function fmtBGN(n) { return n.toFixed(2) + 'лв.'; }
+  function fmtEUR(n) { return '(' + (n / BGN_TO_EUR).toFixed(2) + '€)'; }
+  function fmtBoth(n) { return fmtBGN(n) + ' ' + fmtEUR(n); }
 
-    const fmt = n => n.toFixed(2) + 'лв.';
+  function updateTotals() {
+    const hasBump    = bumpDesktop.checked;
+    const qty        = hasBump ? (1 + bumpQty) : 1;
+    const productBGN = hasBump ? (PRICE_PRODUCT + PRICE_BUMP * bumpQty) : PRICE_PRODUCT;
+    const delivBGN   = getDeliveryPrice();
+    const totalBGN   = productBGN + delivBGN;
+    const delivLabel = getDeliveryLabel();
 
     // Desktop summary
-    document.getElementById('product-subtotal').textContent   = fmt(product);
-    document.getElementById('grand-total').textContent        = fmt(total);
-    document.getElementById('grand-total-eur').textContent    = '(' + totalEur + '€)';
-    document.getElementById('product-qty-label').textContent  = 'x' + qty + ' бройк' + (qty === 1 ? 'а' : 'и');
-    document.getElementById('product-line-price').textContent = fmt(product);
+    const productSubtotalEl = document.getElementById('product-subtotal');
+    if (productSubtotalEl) {
+      productSubtotalEl.innerHTML = fmtBGN(productBGN) + ' <span style="font-size:12px;color:var(--color-text-faint)">' + fmtEUR(productBGN) + '</span>';
+    }
+    const delivPriceEl = document.getElementById('delivery-price-summary');
+    if (delivPriceEl) {
+      delivPriceEl.innerHTML = fmtBGN(delivBGN) + ' <span style="font-size:12px;color:var(--color-text-faint)">' + fmtEUR(delivBGN) + '</span>';
+    }
+    const delivLabelEl = document.getElementById('delivery-label-summary');
+    if (delivLabelEl) delivLabelEl.textContent = delivLabel;
+
+    const grandTotalEl = document.getElementById('grand-total');
+    if (grandTotalEl) grandTotalEl.textContent = fmtBGN(totalBGN);
+    const grandEurEl = document.getElementById('grand-total-eur');
+    if (grandEurEl) grandEurEl.textContent = fmtEUR(totalBGN);
+
+    // Product line price (order item)
+    const linePriceEl = document.getElementById('product-line-price');
+    if (linePriceEl) linePriceEl.innerHTML = fmtBGN(productBGN) + '<small>' + fmtEUR(productBGN) + '</small>';
+    const qtyLabelEl = document.getElementById('product-qty-label');
+    if (qtyLabelEl) qtyLabelEl.textContent = 'x' + qty + ' бройк' + (qty === 1 ? 'а' : 'и');
 
     // Mobile summary
-    document.getElementById('mobile-grand-total').textContent = fmt(total);
+    const mobileGrandEl  = document.getElementById('mobile-grand-total');
+    const mobileEurEl    = document.getElementById('mobile-grand-eur');
+    const mobileDelivEl  = document.getElementById('mobile-delivery-price');
+    const mobileDelLbEl  = document.getElementById('mobile-delivery-label');
+    if (mobileGrandEl) mobileGrandEl.textContent = fmtBGN(totalBGN);
+    if (mobileEurEl)   mobileEurEl.textContent   = fmtEUR(totalBGN);
+    if (mobileDelivEl) mobileDelivEl.textContent = fmtBGN(delivBGN) + ' ' + fmtEUR(delivBGN);
+    if (mobileDelLbEl) mobileDelLbEl.textContent = delivLabel;
   }
 
   // ============================================================
-  // FORM VALIDATION
+  // VALIDATION
   // ============================================================
   const REQUIRED = ['inp-name', 'inp-phone', 'inp-address', 'inp-city'];
-  const FIELD_MAP = {
-    'inp-name':    'field-name',
-    'inp-phone':   'field-phone',
-    'inp-address': 'field-address',
-    'inp-city':    'field-city',
-  };
+  const FIELD_MAP = { 'inp-name': 'field-name', 'inp-phone': 'field-phone', 'inp-address': 'field-address', 'inp-city': 'field-city' };
 
   function validateForm() {
     let valid = true;
     REQUIRED.forEach(id => {
-      const input  = document.getElementById(id);
-      const fieldId = FIELD_MAP[id];
-      const field  = fieldId ? document.getElementById(fieldId) : null;
-      if (!input.value.trim()) {
+      const input = document.getElementById(id);
+      const field = document.getElementById(FIELD_MAP[id]);
+      if (!input || !input.value.trim()) {
         valid = false;
         if (field) field.classList.add('has-error');
       } else {
@@ -836,18 +800,13 @@
     return valid;
   }
 
-  // Live validation on blur
   REQUIRED.forEach(id => {
     const input = document.getElementById(id);
     if (!input) return;
     input.addEventListener('blur', () => {
-      const fieldId = FIELD_MAP[id];
-      const field   = fieldId ? document.getElementById(fieldId) : null;
-      if (!input.value.trim()) {
-        if (field) field.classList.add('has-error');
-      } else {
-        if (field) field.classList.remove('has-error');
-      }
+      const field = document.getElementById(FIELD_MAP[id]);
+      if (!input.value.trim()) { if (field) field.classList.add('has-error'); }
+      else { if (field) field.classList.remove('has-error'); }
     });
   });
 
@@ -863,10 +822,13 @@
       return;
     }
 
-    const hasBump = bumpDesktop.checked;
-    const qty     = hasBump ? 2 : 1;
-    const product = hasBump ? (PRICE_PRODUCT + PRICE_BUMP) : PRICE_PRODUCT;
-    const total   = product + PRICE_DELIVERY;
+    const hasBump    = bumpDesktop.checked;
+    const qty        = hasBump ? (1 + bumpQty) : 1;
+    const productBGN = hasBump ? (PRICE_PRODUCT + PRICE_BUMP * bumpQty) : PRICE_PRODUCT;
+    const delivBGN   = getDeliveryPrice();
+    const totalBGN   = productBGN + delivBGN;
+    const totalEUR   = (totalBGN / BGN_TO_EUR).toFixed(2);
+    const delivType  = deliveryAddressEl.checked ? 'До адрес' : 'До офис на ЕКОНТ';
 
     const payload = {
       lang:        LANG,
@@ -876,21 +838,19 @@
       city:        document.getElementById('inp-city').value.trim(),
       email:       document.getElementById('inp-email').value.trim(),
       bump:        hasBump,
+      bumpQty:     hasBump ? bumpQty : 0,
       qty:         qty,
-      totalBGN:    total.toFixed(2),
-      totalEUR:    (total / 1.956).toFixed(2),
+      totalBGN:    totalBGN.toFixed(2),
+      totalEUR:    totalEUR,
       product:     'GDLite GD-8017 Music',
-      delivery:    'ЕКОНТ',
-      deliveryBGN: PRICE_DELIVERY.toFixed(2),
+      delivery:    delivType,
+      deliveryBGN: delivBGN.toFixed(2),
     };
 
-    // Facebook Purchase event
     if (typeof fbq !== 'undefined') {
       fbq('track', 'Purchase', {
-        value:    parseFloat(payload.totalEUR),
-        currency: 'EUR',
-        num_items: qty,
-        content_name: 'GDLite GD-8017 Music',
+        value: parseFloat(totalEUR), currency: 'EUR',
+        num_items: qty, content_name: 'GDLite GD-8017 Music',
       });
     }
 
@@ -898,20 +858,16 @@
     document.getElementById('spinner-overlay').classList.add('active');
 
     try {
-      const res = await fetch(APPS_SCRIPT_URL, {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(payload),
+      const res  = await fetch(APPS_SCRIPT_URL, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       });
       const json = await res.json();
 
       if (json.status === 'ok') {
         const params = new URLSearchParams({
-          name:  payload.name,
-          city:  payload.city,
-          total: payload.totalBGN,
-          bump:  hasBump ? '1' : '0',
-          qty:   qty,
+          name: payload.name, city: payload.city,
+          total: payload.totalBGN, bump: hasBump ? '1' : '0', qty: qty,
         });
         window.location.href = THANK_YOU_PAGE + '?' + params.toString();
       } else {
