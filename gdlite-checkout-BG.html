@@ -15,7 +15,6 @@
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '194940712762228');
     fbq('track', 'PageView');
-    fbq('track', 'InitiateCheckout', {value: 30.17, currency: 'EUR', num_items: 1});
   </script>
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=194940712762228&ev=PageView&noscript=1"/></noscript>
@@ -883,6 +882,17 @@
       document.getElementById('form-error').textContent = 'Грешка при изпращане. Обади се на 0897 317 055.';
       document.getElementById('form-error').style.display = 'block';
     }
+  }
+
+  // InitiateCheckout - dynamic, fires once on page load with actual initial values
+  if (typeof fbq !== 'undefined') {
+    const initTotalBGN = PRICE_PRODUCT + PRICE_DELIVERY_OFFICE;
+    fbq('track', 'InitiateCheckout', {
+      value:        parseFloat((initTotalBGN / BGN_TO_EUR).toFixed(2)),
+      currency:     'EUR',
+      num_items:    1,
+      content_name: 'GDLite GD-8017 Music',
+    });
   }
 </script>
 
