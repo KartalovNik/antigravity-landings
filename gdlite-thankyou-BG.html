@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поръчката е приета! - GDLite GD-8017 Music</title>
+  <meta name="robots" content="noindex">
+
+  <!-- Facebook Pixel - replace YOUR_PIXEL_ID -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+    // Purchase event fired dynamically below after reading URL params
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-primary:      #E53E3E;
+      --color-success:      #38A169;
+      --color-success-dark: #276749;
+      --color-success-bg:   #F0FFF4;
+      --color-black:        #111111;
+      --color-surface:      #FFFFFF;
+      --color-surface-alt:  #F5F5F5;
+      --color-border:       #E8E8E8;
+      --color-text:         #111111;
+      --color-text-muted:   #666666;
+      --color-text-faint:   #999999;
+      --radius-md:          10px;
+      --radius-lg:          16px;
+      --radius-xl:          24px;
+      --radius-pill:        999px;
+      --shadow-sm:          0 2px 8px rgba(0,0,0,.06);
+      --shadow-md:          0 6px 24px rgba(0,0,0,.10);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--color-surface-alt);
+      color: var(--color-text);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ---- Header ---- */
+    .site-header {
+      background: var(--color-black);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .site-logo {
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .site-logo span { color: var(--color-primary); }
+
+    /* ---- Hero ---- */
+    .hero-ty {
+      background: var(--color-success);
+      padding: 56px 24px 48px;
+      text-align: center;
+      color: #fff;
+    }
+    .checkmark-circle {
+      width: 80px;
+      height: 80px;
+      background: rgba(255,255,255,.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .hero-ty h1 {
+      font-size: clamp(26px, 5vw, 40px);
+      font-weight: 900;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .hero-ty p {
+      font-size: 16px;
+      opacity: .88;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ---- Content wrap ---- */
+    .ty-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    /* ---- Card ---- */
+    .ty-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 16px;
+    }
+    .ty-card h2 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--color-text-muted);
+    }
+
+    /* ---- Order details ---- */
+    .order-detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 15px;
+    }
+    .order-detail-row:last-child { border-bottom: none; }
+    .order-detail-label { color: var(--color-text-muted); }
+    .order-detail-value { font-weight: 700; }
+    .order-total-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 0 0;
+      margin-top: 4px;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    /* ---- What's next steps ---- */
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: var(--color-success);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-title { font-size: 15px; font-weight: 800; margin-bottom: 3px; }
+    .step-desc { font-size: 13px; color: var(--color-text-muted); }
+
+    /* ---- Contact card ---- */
+    .contact-card {
+      background: var(--color-success-bg);
+      border: 1.5px solid var(--color-success);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .contact-card p { font-size: 14px; color: var(--color-text-muted); margin-bottom: 12px; }
+    .phone-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--color-success-dark);
+      text-decoration: none;
+    }
+    .phone-link:hover { text-decoration: underline; }
+
+    /* ---- Back button ---- */
+    .btn-back {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 14px 24px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: border-color 150ms, color 150ms;
+    }
+    .btn-back:hover { border-color: var(--color-text-muted); color: var(--color-text); }
+
+    /* ---- Animation ---- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeIn .5s ease forwards;
+    }
+    @keyframes fadeIn { to { opacity: 1; transform: none; } }
+    .fade-in:nth-child(2) { animation-delay: .1s; }
+    .fade-in:nth-child(3) { animation-delay: .2s; }
+    .fade-in:nth-child(4) { animation-delay: .3s; }
+
+    @media (max-width: 600px) {
+      .hero-ty { padding: 40px 20px 36px; }
+      .ty-wrap { padding: 28px 14px 48px; }
+      .ty-card { padding: 20px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-logo">GDLITE <span>GD-8017</span> MUSIC</div>
+</header>
+
+<!-- Hero -->
+<div class="hero-ty">
+  <div class="checkmark-circle">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+  </div>
+  <h1>Поръчката е приета!</h1>
+  <p id="hero-subtitle">Ще се свържем с теб скоро за потвърждение.</p>
+</div>
+
+<div class="ty-wrap">
+
+  <!-- Order summary -->
+  <div class="ty-card fade-in">
+    <h2>Резюме на поръчката</h2>
+    <div class="order-detail-row">
+      <span class="order-detail-label">Продукт</span>
+      <span class="order-detail-value">GDLite GD-8017 Music</span>
+    </div>
+    <div class="order-detail-row">
+      <span class="order-detail-label">Количество</span>
+      <span class="order-detail-value" id="detail-qty">1 бройка</span>
+    </div>
+    <div class="order-detail-row">
+      <span class="order-detail-label">Доставка</span>
+      <span class="order-detail-value">ЕКОНТ &mdash; 6.00лв.</span>
+    </div>
+    <div class="order-detail-row">
+      <span class="order-detail-label">Метод на плащане</span>
+      <span class="order-detail-value">Наложен платеж</span>
+    </div>
+    <div class="order-total-row">
+      <span>ОБЩО</span>
+      <span id="detail-total">65.00лв.</span>
+    </div>
+  </div>
+
+  <!-- What's next -->
+  <div class="ty-card fade-in">
+    <h2>Какво следва</h2>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Потвърждение по телефона</div>
+          <div class="step-desc">Ще се обадим до 24 часа за потвърждение на поръчката.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">Изпращане чрез ЕКОНТ</div>
+          <div class="step-desc">Пращаме всеки работен ден. Получаваш SMS с номер за проследяване.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">Преглед при получаване</div>
+          <div class="step-desc">Разопаковаш, тестваш и плащаш. Без риск.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-card fade-in">
+    <p>Въпроси? Обади се директно:</p>
+    <a href="tel:+359897317055" class="phone-link">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.49 2 2 0 0 1 3.58 1.32h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.02-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      0897 317 055
+    </a>
+  </div>
+
+  <a href="gdlite-gd8017-Landing-BG-v3.html" class="btn-back fade-in">
+    Назад към началото
+  </a>
+
+</div>
+
+<script>
+  // Read URL params and populate page
+  const params = new URLSearchParams(window.location.search);
+  const name   = params.get('name')  || '';
+  const city   = params.get('city')  || '';
+  const total  = params.get('total') || '65.00';
+  const bump   = params.get('bump')  === '1';
+  const qty    = parseInt(params.get('qty') || '1');
+
+  if (name) {
+    document.getElementById('hero-subtitle').textContent =
+      name.split(' ')[0] + ', ще се свържем с теб скоро за потвърждение.';
+  }
+
+  document.getElementById('detail-qty').textContent   = qty + ' бройк' + (qty === 1 ? 'а' : 'и');
+  document.getElementById('detail-total').textContent = parseFloat(total).toFixed(2) + 'лв.';
+
+  // Facebook Purchase pixel
+  const totalEur = (parseFloat(total) / 1.956).toFixed(2);
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Purchase', {
+      value:        parseFloat(totalEur),
+      currency:     'EUR',
+      num_items:    qty,
+      content_name: 'GDLite GD-8017 Music',
+    });
+  }
+</script>
+
+</body>
+</html>
