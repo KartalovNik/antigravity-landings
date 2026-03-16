@@ -928,11 +928,7 @@
     document.getElementById('spinner-overlay').classList.add('active');
 
     try {
-      await fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: new URLSearchParams({ payload: JSON.stringify(payload) }),
-      });
+      await fetch(APPS_SCRIPT_URL + '?payload=' + encodeURIComponent(JSON.stringify(payload)), { mode: 'no-cors' });
       var params = new URLSearchParams({
         name:  payload.name,
         city:  payload.city,
