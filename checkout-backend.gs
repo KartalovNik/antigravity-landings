@@ -34,7 +34,7 @@
 //
 // ============================================================
 
-var SPREADSHEET_ID = 'YOUR_SPREADSHEET_ID_HERE'; // <-- постави ID от Стъпка 1
+var SPREADSHEET_ID = '1a4gIF-Ak3qBsMC2jgsSbMXo0j9hktKmb4fzBzE8mRT8';
 
 function doPost(e) {
   try {
@@ -57,15 +57,16 @@ function doPost(e) {
         'Обща сума',
         'Доставчик',
         'Цена доставка',
-        'Ime и Фамилия',
+        'Име и Фамилия',
         'Телефон',
         'Адрес',
         'Град',
         'Email',
+        'Бележки',
       ]);
 
       // Форматирай header ред
-      var headerRange = sheet.getRange(1, 1, 1, 13);
+      var headerRange = sheet.getRange(1, 1, 1, 14);
       headerRange.setFontWeight('bold');
       headerRange.setBackground('#E53E3E');
       headerRange.setFontColor('#FFFFFF');
@@ -92,6 +93,7 @@ function doPost(e) {
       data.address       || '',
       data.city          || '',
       data.email         || '',
+      data.notes         || '',
     ]);
 
     // Изпрати имейл нотификация (по желание - премахни коментара за да активираш)

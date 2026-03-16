@@ -480,7 +480,7 @@
           <div class="field" id="field-phone">
             <div class="phone-input-wrap">
               <span class="phone-prefix">&#127463;&#127468; +359</span>
-              <input type="tel" id="inp-phone" name="phone" placeholder="Телефонен номер" autocomplete="tel" inputmode="numeric" pattern="[0-9]*">
+              <input type="tel" id="inp-phone" name="phone" placeholder="Телефон" autocomplete="tel" inputmode="numeric" pattern="[0-9]*">
             </div>
             <span class="field-error">Задължително поле</span>
           </div>
@@ -493,6 +493,11 @@
           <div class="field" id="field-city">
             <input type="text" id="inp-city" name="city" placeholder="Град" autocomplete="address-level2">
             <span class="field-error">Задължително поле</span>
+          </div>
+        </div>
+        <div class="field-group full">
+          <div class="field">
+            <textarea id="inp-notes" name="notes" placeholder="Бележки към поръчката" rows="2" style="border:1.5px solid var(--color-border);border-radius:var(--radius-md);padding:12px 14px;font-size:15px;color:var(--color-text);background:var(--color-surface);font-family:inherit;resize:vertical;outline:none;width:100%;transition:border-color 150ms;" onfocus="this.style.borderColor='var(--color-primary)'" onblur="this.style.borderColor='var(--color-border)'"></textarea>
           </div>
         </div>
       </div>
@@ -851,6 +856,7 @@
       product:     'GDLite GD-8017 Music',
       delivery:    delivType,
       deliveryBGN: delivBGN.toFixed(2),
+      notes:       document.getElementById('inp-notes').value.trim(),
     };
 
     if (typeof fbq !== 'undefined') {

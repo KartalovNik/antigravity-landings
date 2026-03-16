@@ -579,13 +579,13 @@
           <div class="field" id="field-phone">
             <div class="phone-prefix-wrap">
               <span class="phone-prefix">&#127468;&#127479; +30</span>
-              <input type="tel" id="inp-phone" name="phone" placeholder="&#913;&#961;&#953;&#952;&#956;&#972;&#962; &#964;&#951;&#955;&#949;&#966;&#974;&#957;&#959;&#965;" autocomplete="tel" inputmode="numeric" pattern="[0-9]*">
+              <input type="tel" id="inp-phone" name="phone" placeholder="&#932;&#951;&#955;&#941;&#966;&#969;&#957;&#959;" autocomplete="tel" inputmode="numeric" pattern="[0-9]*">
             </div>
             <span class="field-error">&#933;&#960;&#959;&#967;&#961;&#949;&#969;&#964;&#953;&#954;&#972; &#960;&#949;&#948;&#943;&#959;</span>
           </div>
         </div>
 
-        <div class="field-group" style="margin-bottom:0;">
+        <div class="field-group" style="margin-bottom:14px;">
           <div class="field" id="field-address">
             <input type="text" id="inp-address" name="address" placeholder="&#916;&#953;&#949;&#973;&#952;&#965;&#957;&#963;&#951; &#942; &#915;&#961;&#945;&#966;&#949;&#943;&#959; ECONT" autocomplete="street-address">
             <span class="field-error">&#933;&#960;&#959;&#967;&#961;&#949;&#969;&#964;&#953;&#954;&#972; &#960;&#949;&#948;&#943;&#959;</span>
@@ -593,6 +593,11 @@
           <div class="field" id="field-city">
             <input type="text" id="inp-city" name="city" placeholder="&#928;&#972;&#955;&#951;" autocomplete="address-level2">
             <span class="field-error">&#933;&#960;&#959;&#967;&#961;&#949;&#969;&#964;&#953;&#954;&#972; &#960;&#949;&#948;&#943;&#959;</span>
+          </div>
+        </div>
+        <div class="field-group full">
+          <div class="field">
+            <textarea id="inp-notes" name="notes" placeholder="&#931;&#951;&#956;&#949;&#953;&#974;&#963;&#949;&#953;&#962; &#947;&#953;&#945; &#964;&#951;&#957; &#960;&#945;&#961;&#945;&#947;&#947;&#949;&#955;&#943;&#945;" rows="2" style="border:1.5px solid var(--color-border);border-radius:var(--radius-md);padding:12px 14px;font-size:15px;color:var(--color-text);background:var(--color-surface);font-family:inherit;resize:vertical;outline:none;width:100%;transition:border-color 150ms;" onfocus="this.style.borderColor='var(--color-primary)'" onblur="this.style.borderColor='var(--color-border)'"></textarea>
           </div>
         </div>
       </div>
@@ -909,6 +914,7 @@
       product:     'GDLite GD-8017 Music',
       delivery:    delivType,
       deliveryEUR: delivEUR.toFixed(2),
+      notes:       document.getElementById('inp-notes').value.trim(),
     };
 
     if (typeof fbq !== 'undefined') {
