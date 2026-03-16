@@ -464,7 +464,8 @@
       .mobile-summary { display: block; }
       .order-summary-card { display: none; }
       #bump-box-desktop { display: none; }
-      .delivery-option-price { display: none; }
+      .delivery-option { flex-wrap: wrap; }
+      .delivery-option-price { width: 100%; padding-left: 30px; white-space: normal; font-size: 12px; margin-top: 2px; }
     }
 
     @media (max-width: 600px) {
@@ -473,7 +474,6 @@
       .field-group { grid-template-columns: 1fr; }
       .checkout-header { padding: 12px 16px; }
       .checkout-logo { font-size: 13px; }
-      .delivery-option-price { display: none; }
     }
   </style>
 </head>
