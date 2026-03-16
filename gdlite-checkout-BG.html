@@ -871,21 +871,15 @@
     document.getElementById('spinner-overlay').classList.add('active');
 
     try {
-      const res  = await fetch(APPS_SCRIPT_URL, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
+      await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
         body: JSON.stringify(payload),
       });
-      const json = await res.json();
-
-      if (json.status === 'ok') {
-        const params = new URLSearchParams({
-          name: payload.name, city: payload.city,
-          total: payload.totalBGN, bump: hasBump ? '1' : '0', qty: qty,
-        });
-        window.location.href = THANK_YOU_PAGE + '?' + params.toString();
-      } else {
-        throw new Error('Server error');
-      }
+      const params = new URLSearchParams({
+        name: payload.name, city: payload.city,
+        total: payload.totalBGN, bump: hasBump ? '1' : '0', qty: qty,
+      });
+      window.location.href = THANK_YOU_PAGE + '?' + params.toString();
     } catch (err) {
       document.getElementById('spinner-overlay').classList.remove('active');
       document.getElementById('submit-btn').disabled = false;
