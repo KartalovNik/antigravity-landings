@@ -180,11 +180,12 @@
     .delivery-option-note { font-size: 12px; color: var(--color-text-muted); margin-top: 2px; line-height: 1.5; }
     .delivery-option-price {
       font-size: 14px;
-      font-weight: 800;
-      color: var(--color-black);
+      font-weight: 400;
+      color: var(--color-text-muted);
       white-space: nowrap;
       flex-shrink: 0;
       margin-top: 2px;
+      line-height: 1.5;
     }
 
     /* ---- Payment box ---- */
@@ -459,14 +460,14 @@
       <div class="form-card">
         <h2>Данни за поръчката</h2>
 
-        <p class="form-section-label">Моля, напишете Вашето Ime и Имейл отгоре:</p>
+        <p class="form-section-label">Моля, напишете Вашето Име и Email:</p>
         <div class="field-group" style="margin-bottom:14px;">
           <div class="field" id="field-name">
-            <input type="text" id="inp-name" name="name" placeholder="Ime и Фамилия" autocomplete="name">
+            <input type="text" id="inp-name" name="name" placeholder="Име и Фамилия" autocomplete="name">
             <span class="field-error">Задължително поле</span>
           </div>
           <div class="field">
-            <input type="email" id="inp-email" name="email" placeholder="Email Адрес" autocomplete="email">
+            <input type="email" id="inp-email" name="email" placeholder="Email Адрес (незадължително)" autocomplete="email">
           </div>
         </div>
 
@@ -475,7 +476,7 @@
           <div class="field" id="field-phone">
             <div class="phone-input-wrap">
               <span class="phone-prefix">&#127463;&#127468; +359</span>
-              <input type="tel" id="inp-phone" name="phone" placeholder="Телефонен номер" autocomplete="tel">
+              <input type="tel" id="inp-phone" name="phone" placeholder="Телефонен номер" autocomplete="tel" inputmode="numeric" pattern="[0-9]*">
             </div>
             <span class="field-error">Задължително поле</span>
           </div>
