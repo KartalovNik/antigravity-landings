@@ -873,7 +873,8 @@
     try {
       await fetch(APPS_SCRIPT_URL, {
         method: 'POST',
-        body: JSON.stringify(payload),
+        mode: 'no-cors',
+        body: new URLSearchParams({ payload: JSON.stringify(payload) }),
       });
       const params = new URLSearchParams({
         name: payload.name, city: payload.city,

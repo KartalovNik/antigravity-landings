@@ -72,8 +72,9 @@ function doPost(e) {
       headerRange.setFontColor('#FFFFFF');
     }
 
-    // Парсни данните
-    var data = JSON.parse(e.postData.contents);
+    // Парсни данните (URLSearchParams формат)
+    var raw = e.parameter.payload || (e.postData && e.postData.contents);
+    var data = JSON.parse(raw);
 
     // Запиши поръчката
     var now = new Date();
